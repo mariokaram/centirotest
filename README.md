@@ -1,4 +1,4 @@
-# It was was fun doing this challenge 
+# It was fun doing this challenge 
 
 
 to run the project you should run the command : 
