@@ -1,0 +1,120 @@
+.navbar {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #130f30;
+  color: white;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 1.2rem;
+  margin: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo > div:first-child {
+  background-image: url("../public/logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60px;
+  width: 60px;
+}
+.logo > div:nth-child(2) {
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.links ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.links li {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+
+.links li a {
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+
+.links li a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: -10px;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.45s ease-out;
+  transform-origin: bottom right;
+}
+
+.links li a:hover:after {
+  transform: scaleX(0.99);
+  transform-origin: bottom left;
+}
+.barcontainer {
+  position: absolute;
+  top: 2rem;
+  cursor: pointer;
+  right: 2rem;
+  display: none;
+  width: 30px;
+  height: 21px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .barcontainer {
+    display: flex;
+  }
+  .links {
+    width: 100%;
+    display: none;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .links li {
+    text-align: center;
+  }
+  .links li a {
+    padding: 0.5rem 1rem;
+  }
+  .links.active {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+  .barcontainer.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(12.5px);
+  }
+  .barcontainer.active span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  .barcontainer.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12.5px);
+  }
+  .barcontainer span {
+    transition: all 0.3s ease-in;
+  }
+}
